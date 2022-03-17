@@ -1,0 +1,66 @@
+baseURL = 'http://mayapony.site/'
+languageCode = 'zh-Cn'
+title = 'mayapony'
+theme = "hugo-ink"
+# 设置默认的语言
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+copyright = "Copyright © 2021 by maya"
+paginate = 5
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+# [build]
+#  writeStats = true
+
+[params]
+  Subtitle = '鸡汤来咯！'
+  author = "maya"
+  # enableSiteSearch = true
+  enableCollapsibleTOC = true
+  mainSections = ["posts"]
+  avatar = "https://gitee.com/mayapony/dotfiles/raw/master/pic/avatar.jpg"
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/mayapony"
+[params.valine]
+  enable = true
+  appId = 'JK6hBrf7bLfACVinIGW3pfc2-9Nh9j0Va'
+  appKey = 'mYmzjjFoPIsKMVn7aGvsGbiR'
+  notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+  verify = false # Verification code
+  avatar = 'mm'
+  placeholder = '说点什么吧...'
+  visitor = true
+
+# [permalinks]
+#   posts = '/:year/:month/:title/'
+[taxonomies]
+tag = "tags"
+category = "categories"
+
+[menu]
+[[menu.main]]
+  identifier = "posts"
+  name = "博客"
+  title = "博客"
+  url = "/posts/"
+  weight = 1
+[[menu.main]]
+  identifier = "标签"
+  pre = ""
+  post = ""
+  name = "标签"
+  url = "/tags/"
+  title = ""
+  weight = 2
+[[menu.main]]
+  identifier = "分类"
+  pre = ""
+  post = ""
+  name = "分类"
+  url = "/categories/"
+  title = ""
+  weight = 3

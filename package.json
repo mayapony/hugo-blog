@@ -1,0 +1,30 @@
+{
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {
+      "@fullhuman/postcss-purgecss": "monochrome",
+      "autoprefixer": "monochrome",
+      "clipboard-polyfill": "monochrome",
+      "flexsearch": "monochrome",
+      "postcss": "monochrome",
+      "postcss-cli": "monochrome",
+      "postcss-import": "monochrome",
+      "tailwindcss": "monochrome",
+      "zooming": "monochrome"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "autoprefixer": "^10.2.6",
+    "clipboard-polyfill": "^3.0.3",
+    "flexsearch": "^0.7.21",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.2.4",
+    "zooming": "^2.1.1"
+  },
+  "name": "Blog",
+  "version": "0.1.0"
+}

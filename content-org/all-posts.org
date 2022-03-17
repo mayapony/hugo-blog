@@ -1,0 +1,18 @@
+#+hugo_base_dir: ../
+
+* DONE My first post                                        :tag1:@category1:
+:PROPERTIES:
+:EXPORT_FILE_NAME: my-first-post
+:END:
+This is my post body
+
+** 使用use-package
+
+#+begin_src elisp
+(use-package ox-hugo
+  :ensure t   ;Auto-install the package from Melpa
+  :pin melpa  ;`package-archives' should already have ("melpa" . "https://melpa.org/packages/")
+  :after ox)
+#+end_src
+
+
