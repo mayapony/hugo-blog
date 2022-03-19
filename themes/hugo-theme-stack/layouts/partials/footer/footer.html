@@ -1,0 +1,35 @@
+{{- $ThemeVersion := "3.10.0" -}}
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+            {{ .Site.Params.footer.since }} - 
+        {{ end }}
+        {{ now.Format "2006" }} {{ .Site.Title }}
+    </section>
+    
+    <section class="powerby">
+        {{ with .Site.Params.footer.customText }}
+            {{ . | safeHTML }} <br/>
+        {{ end }}
+
+        {{- $Generator := `<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>` -}}
+        {{- $Theme := printf `<b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="%s">Stack</a></b>` $ThemeVersion -}}
+        {{- $DesignedBy := `<a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
+
+        {{ T "footer.builtWith" (dict "Generator" $Generator) | safeHTML }} <br />
+        {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
+    </section>
+
+    <nav class="nav">
+		<div>
+			<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34122102000355"
+				style="display: flex; justify-content: start;  align-items: center; font-size: 1.2rem;">
+				<img src="/icons/备案图标.png" style="margin: 0; height: 1.5rem; color: rgba(255, 255, 255, 0.7);"/>
+				<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">皖公网安备 34122102000355号
+				</p>
+				<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">皖ICP备2022002689号-1</p>
+			</a>
+		</div>
+    </nav>
+</footer>

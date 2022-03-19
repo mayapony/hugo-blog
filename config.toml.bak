@@ -1,33 +1,29 @@
 baseURL = 'http://mayapony.site/'
 languageCode = 'zh-Cn'
 title = 'mayapony'
+# theme = "hugo-ink"
 theme = "hugo-theme-stack"
 # 设置默认的语言
 defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 copyright = "Copyright © 2021 by maya"
 paginate = 10
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+# [build]
+#  writeStats = true
 
 [params]
+  Subtitle = '鸡汤来咯！'
   author = "maya"
-  favicon = "/ico/favicon.ico"
+  # enableSiteSearch = true
+  enableCollapsibleTOC = true
   mainSections = ["posts"]
-[params.SideBar]
-    emoji = ''
-    subtitle = "大三学生一枚~"
-  [params.SideBar.avatar]
-    enable = true
-    local = false
-    src = "https://gitee.com/mayapony/dotfiles/raw/master/pic/avatar.jpg"
-[params.article]
-  math = true
-  toc = true
-  readingTime = true
-[params.Comments]
-  enabled = true
-  provider = "valine"
-[params.Widgets]
-  enabled = ["search", "archives", "tag-cloud"]
+  avatar = "https://gitee.com/mayapony/dotfiles/raw/master/pic/avatar.jpg"
+  # stack
+  favicon = "/ico/favicon.ico"
 [params.valine]
   enable = true
   appId = 'JK6hBrf7bLfACVinIGW3pfc2-9Nh9j0Va'
@@ -38,6 +34,11 @@ paginate = 10
   placeholder = '说点什么吧...'
   visitor = true
 
+[params.SideBar]
+  [params.SideBar.avatar]
+    enable = true
+    local = false
+    src = "https://gitee.com/mayapony/dotfiles/raw/master/pic/avatar.jpg"
 # [permalinks]
 #   posts = '/:year/:month/:title/'
 [taxonomies]
@@ -45,11 +46,6 @@ tag = "tags"
 category = "categories"
 
 [menu]
-[[menu.home]]
-  identifier = "home"
-  name = "首页"
-  url = "/"
-  weight = 0
 [[menu.main]]
   identifier = "posts"
   name = "博客"
