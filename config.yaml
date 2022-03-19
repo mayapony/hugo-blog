@@ -1,0 +1,111 @@
+baseURL: http://mayapony.site/
+languageCode: zh-Cn
+title: mayapony
+theme: hugo-theme-stack
+# 设置默认的语言
+defaultContentLanguage: zh-cn
+hasCJKLanguage: true
+paginate: 6
+params:
+  author: maya
+  favicon: /ico/favicon.ico
+  mainSections: 
+    - posts
+  sidebar:
+   emoji: ''
+   subtitle: 大三学生一枚~
+   avatar:
+    enabled: true
+    local: false
+    src: https://gitee.com/mayapony/dotfiles/raw/master/pic/avatar.jpg
+  article:
+    math: true
+    toc: true
+    readingTime: true
+  comments:
+    enabled: true
+    provider: valine
+  widgets:
+    homepage:
+        - type: search
+        - type: archives
+          params:
+              limit: 5
+        - type: categories
+          params:
+              limit: 10
+        - type: tag-cloud
+          params:
+              limit: 10
+    page:
+        - type: toc
+  valine:
+    enable: true
+    appId: JK6hBrf7bLfACVinIGW3pfc2-9Nh9j0Va
+    appKey: mYmzjjFoPIsKMVn7aGvsGbiR
+    notify: false  # mail notifier , https://github.com/xCss/Valine/wiki
+    verify: false # Verification code
+    avatar: mm
+    placeholder: 说点什么吧...
+    visitor: true
+
+
+menu:
+  main:
+    - identifier: home
+      name: 首页
+      weight: -100
+      url: /
+      params: 
+        icon: home
+
+    - identifier: posts
+      name: 文章
+      weight: 1
+      url: /posts/
+      params: 
+        icon: archives
+
+    - identifier: tags
+      name: 标签
+      weight: 2
+      url: /tags/
+      params: 
+        icon: tag
+
+    - identifier: categories
+      name: 分类
+      weight: 3
+      url: /categories/
+      params: 
+        icon: categories
+        social:
+    - identifier: gitee
+      name: Gitee
+      url: https://gitee.com/mayapony
+      newTab: true
+      params:
+          icon: git
+
+
+markup:
+    goldmark:
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: true
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
+
+taxonomies:
+  tag: tags
+  category: categories
