@@ -1,0 +1,9 @@
+<div class="article-details">
+    <header class="article-category" style="display: flex; justify-content: start; align-items: center;">
+      <a href="/essays/">闲言碎语</a>
+      {{- .Date.Format (or .Site.Params.dateFormat.published "2006-01-02") -}}
+    </header>
+    <div style="margin: 0;">
+      {{ .Content }}
+    </div>
+</div>

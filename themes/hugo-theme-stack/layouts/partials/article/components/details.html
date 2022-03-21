@@ -38,7 +38,8 @@
             <div>
                 {{ partial "helper/icon" "clock" }}
                 <time class="article-time--reading">
-                    {{ T "article.readingTime" .ReadingTime }}
+                    {{ .ReadingTime }} 分钟
+                    <!-- {{ T "article.readingTime" .ReadingTime }} -->
                 </time>
             </div>
         {{ end }}

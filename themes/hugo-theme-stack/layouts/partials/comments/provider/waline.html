@@ -1,4 +1,4 @@
-<script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<script src='//cdn.jsdelivr.net/npm/@waline/client'></script>
 <div id="waline" class="waline-container"></div>
 <style>
     .waline-container {
@@ -27,6 +27,9 @@
 
 <script>
     /// Waline client configuration see: https://waline.js.org/en/reference/client.html
-    new Waline({{ $config | jsonify | safeJS }});
+     Waline({
+      el: '#waline',
+      serverURL: 'https://hugo-waline-pv6q8sty5-mayapony-foxmailcom.vercel.app/',
+    });
 </script>
 {{- end -}}

@@ -10,8 +10,9 @@
 
         <div class="section-card">
             <div class="section-details">
-                <h3 class="section-count">{{ T "list.page" (len .Pages) }}</h3>
-                <h1 class="section-term">{{ .Title }}</h1>
+                <!-- <h3 class="section-count">{{ T "list.page" (len .Pages) }}</h3> -->
+                <h3 class="section-count">{{ len .Pages }}</h3>
+                <h1 class="section-term">{{ .Name }}</h1>
                 {{ with .Params.description }}
                     <h2 class="section-description">{{ . }}</h2>
                 {{ end }}
@@ -71,7 +72,11 @@
     {{ $paginator := .Paginate $pages }}
     <section class="article-list--compact">
         {{ range $paginator.Pages }}
-            {{ partial "article-list/compact" . }}
+            {{ if .Params.essay }}
+                {{ partialCached "article/components/essay" . .RelPermalink}}
+            {{ else }}
+                {{ partial "article-list/compact" . }}
+            {{ end }}
         {{ end }}
     </section>
 

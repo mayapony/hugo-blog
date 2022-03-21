@@ -31,5 +31,9 @@
         </div>
     {{ end }}
 
-    {{ partialCached "article/components/details" . .RelPermalink }}
+    {{ if .Params.essay }}
+        {{ partialCached "article/components/essay" . .RelPermalink}}
+    {{ else }}
+        {{ partialCached "article/components/details" . .RelPermalink }}
+    {{ end }}
 </header>

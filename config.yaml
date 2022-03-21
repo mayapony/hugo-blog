@@ -11,6 +11,7 @@ params:
   favicon: /ico/favicon.ico
   mainSections: 
     - posts
+    - essays
   sidebar:
    emoji: ''
    subtitle: 大三学生一枚~
@@ -22,15 +23,13 @@ params:
     math: true
     toc: true
     readingTime: true
+  dateFormat:
+    published: "2006-01-02 15:04"
   comments:
     enabled: true
-    provider: valine
+    provider: waline
   widgets:
     homepage:
-        - type: search
-        - type: archives
-          params:
-              limit: 5
         - type: categories
           params:
               limit: 10
@@ -80,13 +79,19 @@ menu:
       params: 
         icon: categories
         social:
-    - identifier: gitee
-      name: Gitee
-      url: https://gitee.com/mayapony
+    - identifier: essays
+      name: 闲言碎语
+      weight: 4
+      url: /essays/
+      params: 
+        icon: pen
+
+    - identifier: Gayhub
+      name: Gayhub
+      url: https://github.com/mayapony
       newTab: true
       params:
-          icon: git
-
+          icon: brand-github
 
 markup:
     goldmark:

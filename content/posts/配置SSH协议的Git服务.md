@@ -3,7 +3,7 @@ title: "配置SSH协议的Git服务"
 date: 2022-03-17T13:01:44+08:00
 draft: false
 tags: ["git"]
-layout: "archives"
+layout: "search"
 ---
 
 # 配置SSH协议的Git服务
