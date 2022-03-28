@@ -18,7 +18,7 @@ params:
    avatar:
     enabled: true
     local: false
-    src: https://gitee.com/mayapony/dotfiles/raw/master/pic/avatar.jpg
+    src: '/images/maya.jpg'
   article:
     math: true
     toc: true
