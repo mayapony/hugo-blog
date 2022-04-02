@@ -34,6 +34,12 @@
             </div>
         {{ end }}
 
+        {{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}
+            <time class="article-time--published">
+            <p> 最后更新于 {{.Lastmod.Format "2006-01-02 15:04"}}</p>
+            </time>
+        {{ end }}
+
         {{ if .Site.Params.article.readingTime }}
             <div>
                 {{ partial "helper/icon" "clock" }}

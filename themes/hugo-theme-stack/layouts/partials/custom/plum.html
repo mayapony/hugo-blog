@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      /* background-color: #000; */
+    }
+
+    #plum-canvas {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="plum-canvas" width="1200" height="600"></canvas>
+</body>
+
+<script>
+  const plumCanvas = document.getElementById('plum-canvas')
+  const ctx = plumCanvas.getContext('2d')
+  const WIDTH = 600, HEIGHT = 600
+  const pendingTasks = []
+
+
+  function init() {
+    ctx.strokeStyle = '#cccd'
+    const branch = {
+      start: { x: 0, y: 40 },
+      length: 20,
+      theta: 0
+    }
+    step(branch)
+  }
+
+  function step(branch, depth = 0) {
+    const end = getEndPoint(branch)
+    drawBranch(branch)
+    if (depth < 4 || Math.random() < 0.5) {
+      pendingTasks.push(() => step({
+        start: end,
+        length: branch.length + (Math.random() * 10 - 5),
+        theta: branch.theta - (0.4 * Math.random())
+      }, depth + 1))
+    }
+    if (depth < 4 || Math.random() < 0.5) {
+      pendingTasks.push(() => step({
+        start: end,
+        length: branch.length + (Math.random() * 10 - 5),
+        theta: branch.theta + (0.4 * Math.random())
+      }, depth + 1))
+    }
+  }
+
+  function frame() {
+    const tasks = [...pendingTasks]
+    pendingTasks.length = 0
+    tasks.forEach(fn => fn())
+  }
+
+  let frameCount = 0
+  function startFrame() {
+    requestAnimationFrame(() => {
+      frameCount++
+      if (frameCount % 3 === 0) {
+        frame()
+      }
+      startFrame()
+    })
+  }
+  startFrame()
+
+
+  function lineTo(p1, p2) {
+    ctx.beginPath()
+    ctx.moveTo(p1.x, p1.y)
+    ctx.lineTo(p2.x, p2.y)
+    ctx.stroke()
+  }
+
+  function getEndPoint(b) {
+    return {
+      x: b.start.x + b.length * Math.cos(b.theta),
+      y: b.start.y + b.length * Math.sin(b.theta)
+    }
+  }
+
+  function drawBranch(b) {
+    const { start, length, theta } = b
+    const end = getEndPoint(b)
+    lineTo(start, end)
+  }
+
+  init()
+</script>
+
+</html>

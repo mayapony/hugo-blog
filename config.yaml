@@ -114,3 +114,6 @@ markup:
 taxonomies:
   tag: tags
   category: categories
+
+frontmatter:
+  lastmod: [":fileModTime", "lastmod"]
